@@ -73,7 +73,7 @@ def getChannelId(url_text):
         return(split_text) # the 'split_text' is the id...
     # username
     elif (channel_type == "user"):
-        api_key = 'AIzaSyANfCMgsxe_p9zy26Y7TMfD6zeSdXRKR14'
+        api_key = '' # NEED KEY FOR IT TO WORK
         find_id = 'https://www.googleapis.com/youtube/v3/channels?key=' + api_key + '&forUsername=' + split_text + '&part=id'
         url_request = requests.get(find_id)
         request_json = url_request.json()
@@ -87,7 +87,7 @@ def channelSubs(id):
     # uses the youtube api: https://developers.google.com/youtube/v3/docs/subscriptions/list
     # first try with a channel_string that is hopefully an id and not a username
     try:
-        api_key = 'AIzaSyANfCMgsxe_p9zy26Y7TMfD6zeSdXRKR14'
+        api_key = '' # NEED KEY FOR IT TO WORK
         http_url = 'https://www.googleapis.com/youtube/v3/subscriptions?part=snippet&channelId=' + id + '&maxResults=50&key=' + api_key
         url_request = requests.get(http_url)
         request_json = url_request.json()
